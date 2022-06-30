@@ -1,236 +1,80 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
+//
+///* platium.c -- your weight in platium */
 //#include <stdio.h>
 //int main(void)
 //{
-//	int dogs;
+//	float weight;   /* 你的体重   */
+//	float value;   /* 相等重量的白金的价值   */
 //
-//	printf("How many dogs do you have?\n"); 
-//	scanf("%d", &dogs);
-//	printf("So you have %d dog(s)!\n", dogs);
+//	printf("Are you worth your weight in platinum?\n");
+//	printf("Let's check it out.\n");
+//	printf("Please enter your weight in pounds: ");
+//
+//	/* 获取用户的输入   */
+//	scanf("%f", &weight);
+//	/* 假设白金的价格的$1700   */
+//	/* 14.5833用于把英镑转换成金 */
+//	value = 1700.0 * weight * 14.5833;
+//	printf("Your weight in platinum is worth $%.2f.\n", value);
+//	printf("you are easily worth that! If platinum prices drop,\n");
+//	printf("eat more to maintain your value.\n");
 //
 //	return 0;
 //}
 
+///* print1.c -演示printf()的一些特性 */
 //#include <stdio.h>
 //int main(void)
 //{
-//	printf("Concrete contains gravel and cement.\n");
+//	int ten = 10;
+//	int two = 2;
+//
+//	printf("Doing it right: ");
+//	printf("%d minus %d is %d\n", ten, 2, ten - two);
+//	printf("Doing it wrong: ");
+//	printf("%d minus %d is %d\n", ten);
 //
 //	return 0;
 //}
 
+///* bases.c--以十进制、八进制、十六进制打印十进制数100 */
 //#include <stdio.h>
 //int main(void)
 //{
-//	printf("A .c is used to end a C program filename.\n");
+//	int x = 100;
+//
+//	printf("dec = %d; octal = %o; hex = %x\n", x, x, x);
+//	printf("dec = %d; octal = %#o; hex = %#x\n = %#x\n", x, x, x);
 //
 //	return 0;
 //}
-//
+
+///* toobig.c-- 超出系统允许的最大int值*/
 //#include <stdio.h>
 //int main(void)
 //{
-//	int num;
-//	num = 1;
+//	int i = 2147483647;
+//	unsigned int j = 4294967295;
 //
-//	printf("I am a simple ");
-//	printf("computer.\n");
-//	printf("My favorite number is %d because it is first.\n", num);
+//	printf("%d %d %d\n", i, i + 1, i + 2);
+//	printf("%u %u %u\n", j, j + 1, j + 2);
 //
 //	return 0;
 //}
-
-//
+///* print2.c--更多printf()的特性 */
 //#include <stdio.h>
 //int main(void)
 //{
-//	int feet, fathoms;
-//
-//	fathoms = 2;
-//	feet = 6 * fathoms;
-//	printf("There are %d feet in %d fathoms!\n", feet, fathoms);
-//	printf("Yes, I said %d feet!\n", 6 * fathoms);
-//
-//	return 0;
-//}
-
-//* two_func.c -- 一个文件包含两个函数 */
-//#include <stdio.h>
-//void butler(void);
-//int main(void)
-//{
-//	printf("I will summon the butler function.\n");
-//	butler();
-//	printf("Yes. Bring me some tea and writeable DVDs.\n");
+//	unsigned int un = 3000000000; /* int 为 32 位和 short 为 16 位的系统 */
+//	short end = 200;
+//	long big = 65537;
+//	long long verybig = 12345678908642;
+//	printf("un = %u and not %d\n", un, un);
+//	printf("end = %hd and %d\n", end, end);
+//	printf("big = %ld and not %hd\n", big, big);
+//	printf("verybig= %lld and not %ld\n", big, big);
 //
 //	return 0;
 //}
-//void butler(void)
-//{
-//	printf("You rang, sir?\n");
-//}
-
-///* nogood.c -- 有错误的程序 */
-//#include <stdio.h>
-//int main(void)
-//{
-//	int n, n2, n3;
-//
-//
-//	n = 5;
-//	n2 = n * n;
-//	n3 = n * n * n;
-//	printf("n = %d, n squared = %d, n cubed = %d\n", n, n2, n3);
-//
-//	return 0;
-//}
-
-//int main(void)
-//{
-//	printf("Qihui Wu\n");
-//	printf("Qihui\nWu\n");
-//	printf("Qihui ");
-//	printf("Wu");
-//	return 0;
-//}
-
-////2-2
-//int main(void)
-//{
-//	printf("Qihui Wu\n");
-//	printf("njdxxlxq\n");
-//	return 0;
-//}
-
-////2-3
-//int main(void)
-//{
-//	int years;
-//	int days;
-//
-//	years = 24;
-//	days = 365 * years;
-//	printf("I am %d years old\n", years);
-//	printf("I live in the earth for %d days\n", days);
-//	return 0;
-//}
-
-//void jolly(void);
-//void deny(void);
-//
-//int main(void)
-//{
-//	jolly();
-//	jolly();
-//	jolly();
-//	deny();
-//	return 0;
-//}
-//
-//void jolly(void)
-//{
-//	printf("For he's a jolly good fellow!\n");
-//}
-//
-//void deny(void)
-//{
-//	printf("Which nobody can deny!\n");
-//}
-//
-////2-5
-//#include <stdio.h>
-//void br(void);
-//void ic(void);
-//
-//int main(void)
-//{
-//	br();
-//	printf(",");
-//	ic();
-//	printf("\n");
-//	ic();
-//	printf("\n");
-//	br();
-//	return 0;
-//}
-//
-//void br(void)
-//{
-//	printf("Brazil, Russia");
-//}
-//
-//void ic(void)
-//{
-//	printf("India, China");
-//}
-
-
-////2-6
-//#include <stdio.h>
-//
-//int main(void)
-//{
-//	int toes = 10;
-//	int toes2;
-//	int toes_toes;
-//
-//	toes2 = 2 * toes;
-//	toes_toes = toes * toes;
-//
-//	printf("toes = %d, toes2 = %d, toes_toes = %d", toes, toes2, toes_toes);
-//
-//	return 0;
-//}
-
-////2-7
-//#include <stdio.h>
-//
-//void Smile(void);
-//
-//int main(void)
-//{
-//	Smile();
-//	Smile();
-//	Smile();
-//	printf("\n");
-//	Smile();
-//	Smile();
-//	printf("\n");
-//	Smile();
-//
-//	return 0;
-//}
-//
-//
-//void Smile(void)
-//{
-//	printf("Smail!");
-//}
-
-//2-8
-#include <stdio.h>
-
-void one_three(void);
-void two(void);
-
-int main(void)
-{
-	printf("starting now:\n");
-	one_three();
-	printf("done!");
-
-	return 0;
-}
-
-void one_three(void)
-{
-	printf("one\n");
-	two();
-	printf("three\n");
-}
-
-void two(void)
-{
-	printf("two\n");
-}
