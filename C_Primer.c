@@ -1,80 +1,93 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-//
-///* platium.c -- your weight in platium */
+///* charcode.c-显示字符的代码编号 */
 //#include <stdio.h>
 //int main(void)
 //{
-//	float weight;   /* 你的体重   */
-//	float value;   /* 相等重量的白金的价值   */
+//	char ch;
 //
-//	printf("Are you worth your weight in platinum?\n");
-//	printf("Let's check it out.\n");
-//	printf("Please enter your weight in pounds: ");
-//
-//	/* 获取用户的输入   */
-//	scanf("%f", &weight);
-//	/* 假设白金的价格的$1700   */
-//	/* 14.5833用于把英镑转换成金 */
-//	value = 1700.0 * weight * 14.5833;
-//	printf("Your weight in platinum is worth $%.2f.\n", value);
-//	printf("you are easily worth that! If platinum prices drop,\n");
-//	printf("eat more to maintain your value.\n");
+//	printf("Please enter a character.\n");
+//	scanf("%c", &ch); /* 用户输入字符 */
+//	printf("The code for %c is %d.\n", ch, ch);
 //
 //	return 0;
 //}
 
-///* print1.c -演示printf()的一些特性 */
+///* altnames.c -- 可移植整数类型名 */
 //#include <stdio.h>
+//#include <inttypes.h>
 //int main(void)
 //{
-//	int ten = 10;
-//	int two = 2;
+//	int32_t me32;
 //
-//	printf("Doing it right: ");
-//	printf("%d minus %d is %d\n", ten, 2, ten - two);
-//	printf("Doing it wrong: ");
-//	printf("%d minus %d is %d\n", ten);
+//	me32 = 45933945;
+//	printf("First, assume int32_t is int: ");
+//	printf("me32 = %d\n", me32);
+//	printf("Next, let's not make any assumptions.\n");
+//	printf("Instead, use a \"macro\" from inttypes.h: ");
+//	printf("me32 = %" PRId32 "\n", me32);
 //
 //	return 0;
 //}
 
-///* bases.c--以十进制、八进制、十六进制打印十进制数100 */
+///* showf_pt.c -- 以两种方式显示float类型的值 */
 //#include <stdio.h>
 //int main(void)
 //{
-//	int x = 100;
+//	float about = 32000.0;
+//	double abet = 2.14e9;
+//	long double dip = 5.32e-5;
 //
-//	printf("dec = %d; octal = %o; hex = %x\n", x, x, x);
-//	printf("dec = %d; octal = %#o; hex = %#x\n = %#x\n", x, x, x);
+//	printf("%f can be written %e\n", about, about);
+//	//下一行要求编译器支持C99或其中的相关特性
+//	printf("And it's %a in hexadecimal, powers of 2 notation\n", about);
+//	printf("%f can be written %e\n", abet, abet);
+//	printf("%Lf can be written %Le\n", dip, dip);
 //
 //	return 0;
 //}
+////* typesize.c -- 打印类型大小 */
+//#include <stdio.h>
+//int main(void)
+//{
+//	/* C99 为类型大小提供%zd转换说明 */
+//	printf("Type int has a size of %d bytes.\n", sizeof(int));
+//	printf("Type char has a size of %d bytes.\n", sizeof(char));
+//	printf("Type long has a size of %d bytes.\n", sizeof(long));
+//	printf("type long long has a size of %d bytes.\n",
+//		sizeof(long long));
+//	printf("Type double has a size of %d bytes.\n",
+//		sizeof(long double));
+//
+//	return 0;
+//}
+///* badcount.c -- 参数错误的情况 */
+//#include <stdio.h>
+//int main(void)
+//{
+//	int n = 4;
+//	int m = 5;
+//	float f = 7.0f;
+//	float g = 8.0f;
+//
+//	printf("%d\n", n, m);
+//	printf("%d %d %d\n", n);
+//	printf("%d %d\n", f, g);
+//
+//	return 0;
+//}
+/* escape.c -- 使用转移序列 */
+#include <stdio.h>
+int main(void)
+{
+	float salary;
 
-///* toobig.c-- 超出系统允许的最大int值*/
-//#include <stdio.h>
-//int main(void)
-//{
-//	int i = 2147483647;
-//	unsigned int j = 4294967295;
-//
-//	printf("%d %d %d\n", i, i + 1, i + 2);
-//	printf("%u %u %u\n", j, j + 1, j + 2);
-//
-//	return 0;
-//}
-///* print2.c--更多printf()的特性 */
-//#include <stdio.h>
-//int main(void)
-//{
-//	unsigned int un = 3000000000; /* int 为 32 位和 short 为 16 位的系统 */
-//	short end = 200;
-//	long big = 65537;
-//	long long verybig = 12345678908642;
-//	printf("un = %u and not %d\n", un, un);
-//	printf("end = %hd and %d\n", end, end);
-//	printf("big = %ld and not %hd\n", big, big);
-//	printf("verybig= %lld and not %ld\n", big, big);
-//
-//	return 0;
-//}
+	printf("\aEnter your desired monthly salary:");
+	printf(" $_______\b\b\b\b\b\b\b");
+	scanf("%f", &salary);
+	printf("\n\t$%.2f a month is $%.2f a year.", salary,
+		salary * 12.0);
+	printf("\rGee!\n");
+
+	return 0;
+}
