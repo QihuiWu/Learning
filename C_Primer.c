@@ -1,93 +1,135 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-///* charcode.c-显示字符的代码编号 */
 //#include <stdio.h>
+//#include <float.h>
+//#include <limits.h>
+//
 //int main(void)
 //{
-//	char ch;
+//	int big_int = 2147483647;
+//	//↑signed int最大值是2的31次方减1;
+//	float big_float = 3.4e38;
+//	//↑float最大值一般是3.4E38;
+//	float small_float = 10.0 / 3;
+//	//↑float有效位数是6位;
+//	printf("The big int data is %d.\n", big_int + 1);
+//	//↑整型数据最大值+1会造成越界,结果是-2147493648;
+//	printf("The big float data is %f.\n", big_float * 10);
+//	//↑float最大值*10会造成越界,结果是inf;
+//	printf("The big bit float data is %f.\n", small_float);
+//	//↑float最大有效精度;
+//	printf("The max float data is %f.\n", FLT_MAX);
+//	//↑float类型最大值;
+//	printf("The max int data is %ld.\n", INT_MAX);
+//	//↑int类型最大值;
 //
-//	printf("Please enter a character.\n");
-//	scanf("%c", &ch); /* 用户输入字符 */
-//	printf("The code for %c is %d.\n", ch, ch);
+//	return 0;
+//}
+////————————————————
+////版权声明：本文为CSDN博主「MZZDX」的原创文章，遵循CC 4.0 BY - SA版权协议，转载请附上原文出处链接及本声明。
+////原文链接：https ://blog.csdn.net/m0_46181359/article/details/105280
+////
+////#include <stdio.h>
+////
+////int main(void)
+////{
+////	int a = 0;
+////	scanf("%d", &a);
+////	printf("%c\n", a);
+////
+////	return 0;
+////}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	printf("\a");
+//	printf("Startled by the sudden sound, Sally shouted,\n");
+//	printf("\"By the Great Pumplin, what was that!\"\n");
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	float a = 0;
+//
+//	scanf("%f", &a);
+//	printf("Enter a floating-point value: %f\n", a);
+//	printf("fixed-point notation: %.6f\n", a);
+//	printf("exponential notation: %.6e\n", a);
+//	printf("p notation: %.2a\n", a);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int age = 0;
+//	printf("Please enter your age>:");
+//	scanf("%d", &age);
+//	printf("You are %d years old, or %d s", age, 3.156 * 10000000 * age);
+//
+//	return 0;
+////}
+//#include <stdio.h>
+//#define SW 3.0e-23
+//
+//int main(void)
+//{
+//	int kt = 0;
+//	printf("Please enter the kt>:\n");
+//	scanf("%d", &kt);
+//	printf("%d kt include %e water\n", kt, 950 * kt / 3.0e-23);
 //
 //	return 0;
 //}
 
-///* altnames.c -- 可移植整数类型名 */
 //#include <stdio.h>
-//#include <inttypes.h>
+//#define MASS_PER_MOLE 3.0e-23
+//#define MASS_PER_QUART 950
+//
 //int main(void)
 //{
-//	int32_t me32;
+//	double quart, molecules;
 //
-//	me32 = 45933945;
-//	printf("First, assume int32_t is int: ");
-//	printf("me32 = %d\n", me32);
-//	printf("Next, let's not make any assumptions.\n");
-//	printf("Instead, use a \"macro\" from inttypes.h: ");
-//	printf("me32 = %" PRId32 "\n", me32);
+//	printf("Please enter a quart for water:");
+//	scanf("%lf", &quart);
+//	//1夸脱水大约是950克;
+//	//1个水分子质量约为3.0 * 10^(-23)克;
+//	molecules = quart * MASS_PER_QUART / MASS_PER_MOLE;
+//	printf("%g quart water includes %e water molecules.\n", quart, molecules);
 //
 //	return 0;
 //}
-
-///* showf_pt.c -- 以两种方式显示float类型的值 */
+////\\————————————————
+////原文链接：https ://blog.csdn.net/m0_46181359/article/details/105280579
 //#include <stdio.h>
+//
 //int main(void)
 //{
-//	float about = 32000.0;
-//	double abet = 2.14e9;
-//	long double dip = 5.32e-5;
+//	float yc = 0;
 //
-//	printf("%f can be written %e\n", about, about);
-//	//下一行要求编译器支持C99或其中的相关特性
-//	printf("And it's %a in hexadecimal, powers of 2 notation\n", about);
-//	printf("%f can be written %e\n", abet, abet);
-//	printf("%Lf can be written %Le\n", dip, dip);
+//	printf("enter your yc please>:");
+//	scanf("%f", &yc);
+//	printf("%f yc means %f cm", yc, 2.54 * yc);
 //
 //	return 0;
 //}
-////* typesize.c -- 打印类型大小 */
-//#include <stdio.h>
-//int main(void)
-//{
-//	/* C99 为类型大小提供%zd转换说明 */
-//	printf("Type int has a size of %d bytes.\n", sizeof(int));
-//	printf("Type char has a size of %d bytes.\n", sizeof(char));
-//	printf("Type long has a size of %d bytes.\n", sizeof(long));
-//	printf("type long long has a size of %d bytes.\n",
-//		sizeof(long long));
-//	printf("Type double has a size of %d bytes.\n",
-//		sizeof(long double));
-//
-//	return 0;
-//}
-///* badcount.c -- 参数错误的情况 */
-//#include <stdio.h>
-//int main(void)
-//{
-//	int n = 4;
-//	int m = 5;
-//	float f = 7.0f;
-//	float g = 8.0f;
-//
-//	printf("%d\n", n, m);
-//	printf("%d %d %d\n", n);
-//	printf("%d %d\n", f, g);
-//
-//	return 0;
-//}
-/* escape.c -- 使用转移序列 */
 #include <stdio.h>
+
 int main(void)
 {
-	float salary;
-
-	printf("\aEnter your desired monthly salary:");
-	printf(" $_______\b\b\b\b\b\b\b");
-	scanf("%f", &salary);
-	printf("\n\t$%.2f a month is $%.2f a year.", salary,
-		salary * 12.0);
-	printf("\rGee!\n");
+	float pt, bei, gs, ts, cs;
+	printf("please enter bei>:"); 
+	scanf("%f", &bei);
+	pt = 2 * bei;
+	gs = bei / 8;
+	ts = gs / 2;
+	cs = ts / 3;
+	printf("%f bei means %f pt, %f gs, %f ts, %f cs\n", bei, pt, gs, ts, cs);
 
 	return 0;
 }
