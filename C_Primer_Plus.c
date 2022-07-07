@@ -1,62 +1,53 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-//// talkback.c -- 演示与用户交互
-//#include <stdio.h>
-//#include <string.h>
-//#define DENSITY 62.4
-//int main()
-//{
-//	float weight, volume;
-//	int size, letters;
-//	char name[40];
-//
-//	printf("Hi! What's your first name?\n", name);
-//	scanf("%s", name);
-//	printf("%s, what's your wright in pounds?\n", name);
-//	scanf("%f", &weight);
-//	size = sizeof name;
-//	letters = strlen(name);
-//	volume = weight / DENSITY;
-//	printf("Well, %s, your volume is %2.2f cubic feet.\n",
-//		name, volume);
-//	printf("Also, your first name has %d letter,\n",
-//		letters);
-//	printf("and we have %d bytes to store it.\n", size);
-//
-//
-//	return 0;
-//}
-///* praise1.c -- 使用不同类型的字符串 */
-//#include <stdio.h>
-//#define PRAISE "You are an extraordinary being."
+///* golf.c -- 高尔夫锦标赛计分卡 */
 //int main(void)
 //{
-//	char name[40];
+//	int jane, tarzan, cheeta;
 //
-//	printf("What's your name? ");
-//	scanf("%s", name);
-//	printf("Hello, %s. %s\n", name, PRAISE);
+//	cheeta = tarzan = jane = 68;
+//	printf("               cheeta   tarzan   jane\n");
+//	printf("First round score %4d %8d %8d\n", cheeta, tarzan, jane);
 //
 //	return 0;
 //}
-/* praise2.c */
-// 如果编译器不识别%zd, 尝试换成%u 或 %lu。
+///* square.c -- 计算1-20的平方 */
+//#include <stdio.h>
+//int main(void)
+//{
+//	int num = 1;
+//
+//	while (num < 21)
+//	{
+//		printf("%-4d %-6d\n", num, num * num);
+//		num = num + 1;
+//	}
+//
+//	return 0;
+//}
+/* wheat.c -- 指数增长 */
 #include <stdio.h>
-#include <string.h>
-#define PRAISE "You are an extraordinary being."
+#define SQUARES 64
 int main(void)
 {
-	char name[40];
+	const double CROP = 2E16;
+	double current, total;
+	int count = 1;
 
-	printf("What's your name? ");
-	scanf("%s", name);
-	printf("Hello, %s. %s\n", name, PRAISE);
-	printf("Your name of %u letters occupies %u memory cells.\n",
-		strlen(name), sizeof name);
-	printf("The phrase of praise has %u letters ",
-		strlen(PRAISE));
-	printf("and pccupies %u memory cells.\n", sizeof PRAISE);
-
-
+	printf("square      grains      total      ");
+	printf("fraction of \n");
+	printf("           added       grains      ");
+	total = current = 1.0;
+	printf("%4d %13.2e %12.2e %12.2e\n", count, current,
+		total, total / CROP);
+	while (count < SQUARES)
+	{
+		count = count + 1;
+		current = 2.0 * current;
+		total = total + current;
+		printf("%4d %13.2e %12.2e %12.2e\n", count, current,
+			total, total / CROP);
+	}
+	printf("That's all.\n");
 	return 0;
 }
