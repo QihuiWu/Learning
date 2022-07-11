@@ -794,35 +794,130 @@
 //
 //	return 0;
 //}
-// power.c -- 计算数的整数幂
+//// power.c -- 计算数的整数幂
+//#include <stdio.h>
+//double power(double n, int p);
+//int main(void)
+//{
+//	double x, xpow;
+//	int exp;
+//
+//	printf("Enter a number and the positive integer power");
+//	printf(" to which\nthe number will be raised. Enter q");
+//	printf(" to quit.\n");
+//	while (scanf("%lf%d", &x, &exp) == 2)
+//	{
+//		xpow = power(x, exp);
+//		printf("%.3g to the power %d is %.5g\n", x, exp, xpow);
+//		printf("Ener next pair of numbers or q to quit.\n");
+//	}
+//	printf("Hope you enjoyed this power trip -- bye!\n");
+//
+//	return 0;
+//}
+//
+//double power(double n, int p)
+//{
+//	double pow = 1;
+//	int i;
+//
+//	for (i = 1; i <= p; i++)
+//		pow *= n;
+//
+//	return pow;
+//}
+//#include <stdio.h>
+//#include <math.h>
+//
+//int main(void)
+//{
+//	double x = 2000.0;
+//	double y1, y2;
+//	double x1, x2, x3, x4, x5, x6;
+//	y1 = -pow(10.0,-20.0) * pow(x,6.0) + 3 * pow(10.0,-16.0) * pow(x,5.0) - 2 * pow(10.0,-12.0) * pow(x,4.0) + pow(10,-8.0) * pow(x,-3.0) - 3 * pow(10,-5.0) * pow(x,2.0) + 0.0337*x - 16.673;
+//	printf("%lf\n", y1);
+//	x1 = -pow(10.0, -20.0) * pow(x, 6.0);
+//	x2 = 3 * pow(10.0, -16.0) * pow(x, 5.0);
+//	x3 = -2 * pow(10.0, -12.0) * pow(x, 4.0);
+//	x4 = pow(10, -8.0) * pow(x, -3.0);
+//	x5 = -3 * pow(10, -5.0) * pow(x, 2.0);
+//	x6 = 0.0337*x - 16.673;
+//	y2 = x1 + x2 + x3 + x4 + x5 + x6;
+//
+//	printf("%lf\n", x1);
+//	printf("%lf\n", y1);
+//	printf("%lf\n", y2);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	char English[26];
+//	char x = 'a';
+//	int y = 0;
+//	
+//	for (x = 'a'; x <= 'z'; x++, y++)
+//	{
+//		English[y] = x;
+//		printf("%c\n", English[y]);
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define ROW 5
+//#define COL 5
+//
+//int main(void)
+//{
+//	int i = 1;
+//	for (i = 1; i <= ROW; i++)
+//	{
+//		int j = 1;
+//		for (j = 1; j <= i; j++)
+//			printf("$");
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define ROW 6
+//#define LEN 26
+//
+//int main(void)
+//{
+//	int i, j, k;
+//
+//	for (i = 1; i <= ROW; i++)
+//	{
+//		for (j = 0; j < i; j++)
+//		{
+//			printf("%c", 'F'- j);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
 #include <stdio.h>
-double power(double n, int p);
+#define ROW 6
+
 int main(void)
 {
-	double x, xpow;
-	int exp;
+	int i, j;
+	char k = 'A';
 
-	printf("Enter a number and the positive integer power");
-	printf(" to which\nthe number will be raised. Enter q");
-	printf(" to quit.\n");
-	while (scanf("%lf%d", &x, &exp) == 2)
+	for (i = 1; i <= ROW; i++)
 	{
-		xpow = power(x, exp);
-		printf("%.3g to the power %d is %.5g\n", x, exp, xpow);
-		printf("Ener next pair of numbers or q to quit.\n");
+		for (j = 1; j <= i; j++)
+		{
+			printf("%c", k++);
+		}
+		printf("\n");
 	}
-	printf("Hope you enjoyed this power trip -- bye!\n");
 
 	return 0;
-}
-
-double power(double n, int p)
-{
-	double pow = 1;
-	int i;
-
-	for (i = 1; i <= p; i++)
-		pow *= n;
-
-	return pow;
 }
