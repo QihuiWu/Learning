@@ -902,22 +902,36 @@
 //
 //	return 0;
 //}
-#include <stdio.h>
-#define ROW 6
-
-int main(void)
-{
-	int i, j;
-	char k = 'A';
-
-	for (i = 1; i <= ROW; i++)
-	{
-		for (j = 1; j <= i; j++)
-		{
-			printf("%c", k++);
-		}
-		printf("\n");
-	}
-
-	return 0;
-}
+//#include <stdio.h>
+//#define ROW 6
+//
+//int main(void)
+//{
+//	int i, j;
+//	char k = 'A';
+//
+//	for (i = 1; i <= ROW; i++)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%c", k++);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	float fa, fb;
+//	printf("Please enter two numbers:");
+//	while (scanf("%f %f", &fa, &fb) == 2)
+//	{
+//		printf("%f\n", (fa - fb) / (fa * fb));
+//	}
+//	printf("Done!\n");
+//
+//	return 0;
+//}
