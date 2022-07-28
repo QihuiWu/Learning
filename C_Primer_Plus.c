@@ -935,3 +935,78 @@
 //
 //	return 0;
 //}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int len, i;
+//	char arr[40];
+////	arr[40] = "liushan";
+////	scanf("%39s", arr);
+//	len = strlen(arr);
+//	printf("%d\n", len);
+//	for (i = len; i > 0; i--)
+//	{
+//		printf("%c", arr[i-1]);
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#include <string.h>
+//#define LEN 20
+//
+//int main(void)
+//{
+//	int i;
+//	char str[LEN];
+//
+//	printf("Please enter a word: ");
+//	scanf("%19s", str);
+//	printf("The word is:\n");
+//	printf("%s\n", str);
+//
+//	printf("Reversing the word is:\n");
+//	for (i = strlen(str) - 1; i >= 0; i--)
+//	{
+//		printf("%c", str[i]);
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	double a, b;
+//	printf("Please enter two f numble: ");
+//	while (scanf("%lf %lf", &a, &b) == 2)
+//	{
+//		printf("%f\n", (a - b) / (a*b));
+//	}
+//
+//	return 0;
+//}
+#include <stdio.h>
+int main(void)
+{
+	double a, b;
+	printf("Please enter two f numbles: ");
+
+	double suanshu(double i, double j);
+
+	while (scanf("%lf %lf", &a, &b) == 2)
+	{
+		printf("%f\n", suanshu(a,b));
+		printf("You can do it again(q to quit)\n");
+	}
+
+	return 0;
+}
+
+double suanshu(double i, double j)
+{
+	double ret;
+	ret = (i - j) / (i*j);
+	return ret;
+}
