@@ -987,26 +987,338 @@
 //
 //	return 0;
 //}
-#include <stdio.h>
-int main(void)
-{
-	double a, b;
-	printf("Please enter two f numbles: ");
+//#include <stdio.h>
+//int main(void)
+//{
+//	double a, b;
+//	printf("Please enter two f numbles: ");
+//
+//	double suanshu(double i, double j);
+//
+//	while (scanf("%lf %lf", &a, &b) == 2)
+//	{
+//		printf("%f\n", suanshu(a,b));
+//		printf("You can do it again(q to quit)\n");
+//	}
+//
+//	return 0;
+//}
+//
+//double suanshu(double i, double j)
+//{
+//	double ret;
+//	ret = (i - j) / (i*j);
+//	return ret;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int min, max, i, sum;
+//	sum = 0;
+//	printf("Enter lower and upper integer limits: ");
+//	scanf("%d %d", &min, &max);
+//	while (min < max)
+//	{
+//		sum = 0;
+//		for(i = min; i <= max; i++)
+//		{
+//			sum += i * i;
+//		}
+//
+//		printf("The sums of the squares from %d to %d is %d\n", min * min, max * max, sum);
+//		printf("Enter next set of limits: ");
+//		scanf("%d %d", &min, &max);
+//	}
+//
+//	printf("Done");
+//
+//	return 0;
+//	
+//
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int i, j, p;
+//	int a[8];
+//
+//	printf("Please enter 8 numbers: ");
+//	for (i = 0; i < 8; i++)
+//	{
+//		scanf("%d", &a[i]);
+//	}
+//
+//	for (i = 7; i > 0; i--)
+//	{
+//		p = a[i];
+//		for (j = 0; j < 7; j++)
+//		{
+//			if (p < a[j])
+//			{
+//				p = a[j];
+//			}
+//		}
+//	}
+//
+//	for (i = 7; i >= 0; i--)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int i, max;
+//	float sum1, sum2;
+//	sum1 = 1;
+//	sum2 = 1;
+//	
+//	printf("Please enter max: ");
+//	scanf("%d", &max);
+//
+//	while (max > 0)
+//	{
+//		for (i = 2; i <= max; i++)
+//		{
+//			sum1 += 1.0 / i;
+//			sum2 += 1.0 / (pow(-1, i - 1)*i);
+//		}
+//		printf("sum1 = %f", sum1);
+//		printf("sum2 = %f", sum2);
+//		printf("Please enter next max: ");
+//		scanf("%d", &max);
+//	}
+//	
+//}
+//#include <stdio.h>
+//#include <math.h>
+//#define N 8
+//
+//int main(void)
+//{
+//	int i;
+//	int arr[N];
+//
+//	for (i = 0; i < N; i++)
+//	{
+//		arr[i] = pow(2, i);
+//	}
+//
+//	i = 0;
+//	do
+//	{
+//		printf("%d ", arr[i]);
+//		i++;
+//	} while (i < N);
+//}
+//#include <stdio.h>
+//#define N 8
+//
+//int main(void)
+//{
+//	int i;
+//	double sum = 0.0;
+//	double arr1[N];
+//	double arr2[N];
+//
+//	printf("Enter %d numbles for arr1: ",N);
+//	for (i = 0; i < N; i++)
+//	{
+//		scanf("%lf", &arr1[i]);
+//	}
+//	
+//	arr2[0] = arr1[0];
+//
+//	for (i = 1; i < N; i++)
+//	{
+//		arr2[i] = arr1[i] + arr2[i - 1];
+//	}
+//	for (i = 0; i < N; i++)
+//	{
+//		printf("%-5g ", arr1[i]);
+//	}
+//
+//		printf("\n");
+//	for (i = 0; i < N; i++)
+//	{
+//		printf("%-5g ", arr2[i]);
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define N 8
+//
+//int main(void)
+//{
+//	int i;
+//	double a[N], b[N];
+//
+//	printf("Please enter %d numbers:\n", N);
+//	for (i = 0; i < N; i++)
+//	{
+//		scanf("%lf", &a[i]);
+//	}
+//	b[0] = a[0];
+//	for (i = 1; i < N; i++)
+//	{
+//		b[i] = a[i] + b[i - 1];
+//	}
+//	printf("Here are the results for array a:\n");
+//	for (i = 0; i < N; i++)
+//	{
+//		printf("%-3g", a[i]);
+//	}
+//	printf("\nHere are the results for array b:\n");
+//	for (i = 0; i < N; i++)
+//	{
+//		printf("%-3g", b[i]);
+//	}
+//	printf("\nDone.\n");
+//
+//	return 0;
+//}
 
-	double suanshu(double i, double j);
-
-	while (scanf("%lf %lf", &a, &b) == 2)
-	{
-		printf("%f\n", suanshu(a,b));
-		printf("You can do it again(q to quit)\n");
-	}
-
-	return 0;
-}
-
-double suanshu(double i, double j)
-{
-	double ret;
-	ret = (i - j) / (i*j);
-	return ret;
-}
+//#include <stdio.h>
+//#include <string.h>
+//#define N 255
+//
+//int main(void)
+//{
+//	int i, len;
+//	char str[N];
+//
+//	printf("Enter:\n");
+//	scanf("%s", str);
+//	len = strlen(str);
+//	
+//	for (i = len-1; i >= 0; i--)
+//	{
+//		printf("%c", str[i]);
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int i, m1, m2, year;
+//	year = 0;
+//	m1 = m2 = 100;
+//	while (m1 >= m2)
+//	{
+//		year++;
+//		m1 += 0.1 * 100;
+//		m2 += 0.05 * m2;
+//	}
+//	printf("%d %d %d", year, m1, m2);
+//}
+//#include <stdio.h>
+//#define RATE_SIMP 0.10
+//#define RATE_COMP 0.05
+//#define INIT_AMT 100.0
+//
+//int main(void)
+//{
+//	int years = 0;
+//	double daphne = INIT_AMT;
+//	double deirdre = INIT_AMT;
+//
+//	do
+//	{
+//		daphne += RATE_SIMP * INIT_AMT;
+//		deirdre += RATE_COMP * deirdre;
+//		years++;
+//	} while (deirdre < daphne);
+//	printf("Investment values after %d years:\n", years);
+//	printf("Daphne: $%.2f\n", daphne);
+//	printf("Deirdre: $%.2f\n", deirdre);
+//	printf("Deirdre(invest) > Daphne(invest)\n");
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define BEG 100
+//#define OUT 10
+//#define LV 0.08
+//
+//int main(void)
+//{
+//	int year = 1;
+//	double rest;
+//
+//	rest = BEG;
+//
+//	while (rest + LV*rest >= 10)
+//	{
+//		rest += LV*rest - OUT;
+//		year++;
+//	}
+//	printf("%d", year);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define TAX 0.08
+//
+//int main(void)
+//{
+//	int i = 0;
+//	double Chuckie = 100.0;
+//
+//	do
+//	{
+//		i++;
+//		Chuckie += Chuckie * TAX;
+//		Chuckie -= 10;
+//		printf("(%d)account:%g.\n", i, Chuckie);
+//	} while (Chuckie > 9);
+//	//↑若余额低于9则不够下一年支取;
+//	printf("After %d years:\n", ++i);
+//	printf("Chuckie has taken all of the money!\n");
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define DBS 150
+//#define BEG 5
+//
+//int main(void)
+//{
+//	int nf, nw;
+//	nf = BEG;
+//	nw = 1;
+//
+//	do
+//	{
+//		nf = 2 * (nf - nw);
+//		nw++;
+//	} while (nf <= DBS);
+//
+//	printf("%d", --nw);
+//	printf("\n");
+//	printf("%d", nf);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int i = 1;
+//	int friends = 5;
+//
+//	while (friends < 150)
+//	{
+//		printf("At %d weeks, Rabnud has", i);
+//		printf("%4d friends.\n", friends);
+//		friends = 2 * (friends - i++);
+//	}
+//	printf("At %d weeks, over Dunbar's number(150).\n", i);
+//
+//	return 0;
+//}
