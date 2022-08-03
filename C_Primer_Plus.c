@@ -1322,3 +1322,103 @@
 //
 //	return 0;
 //}
+// colddays.c -- 找出0℃以下的天数占总天数的百分比
+//#include <stdio.h>
+//int main(void)
+//{
+//	const int FREEZING = 0;
+//	float temperature;
+//	int cold_days = 0;
+//	int all_days = 0;
+//
+//	printf("Enter the list of daily low temperatures.\n");
+//	printf("Use Celsius, and enter q to quit.\n");
+//	while (scanf("%f", &temperature) == 1)
+//	{
+//		all_days++;
+//		if (temperature < FREEZING)
+//			cold_days++;
+//	}
+//	if (all_days != 0)
+//		printf("%d days total: %.lf%% were below freezing.\n",
+//		all_days, 100.0 * (float)cold_days / all_days);
+//	if (all_days == 0)
+//		printf("No data entered!\n");
+//
+//	return 0;
+//}
+// cypher1.c -- 更改输入，空格不变
+//#include <stdio.h>
+//#define SPACE ' '
+//
+//int main(void)
+//{
+//	char ch;
+//
+//	ch = getchar();
+//	while (ch != '\n')
+//	{
+//		if (ch == SPACE)
+//			putchar(ch);
+//		else
+//			putchar(ch + 1);
+//		ch = getchar();
+//	}
+//	putchar(ch);
+//
+//	return 0;
+//}
+// cypher2.c -- 替换输入的字母，非字母字符保持不变
+//#include <stdio.h>
+//#include <ctype.h>
+//int main(void)
+//{
+//	char ch;
+//
+//	while ((ch = getchar()) != '\n')
+//	{
+//		if (isalpha(ch))
+//			putchar(ch + 1);
+//		else
+//			putchar(ch);
+//	}
+//	putchar(ch);
+//
+//	return 0;
+//}
+// electric.c -- 计算电费
+//#include <stdio.h>
+//#define RATE1 0.13230  // 首次使用360 kwh的费率
+//#define RATE2 0.15040  // 接着再使用108 kwh的费率
+//#define RATE3 0.30025
+//#define RATE4 0.34025
+//#define BREAK1 360.0
+//#define BREAK2 468.0
+//#define BREAK3 720.0
+//#define BASE1 (RATE1 * BREAK1)
+//#define BASE2 (BASE1 + (RATE2 * (BREAK2 - BREAK1)))
+//#define BASE3 (BASE1 + BASE2 + (RATE3 *(BREAK3 - BREAK2)))
+//
+//int main(void)
+//{
+//	double kwh;
+//	double bill;
+//
+//	printf("Please enter the kwh used.\n");
+//	scanf("%lf", &kwh);
+//	if (kwh <= BREAK1)
+//		bill = RATE1 * kwh;
+//	else if (kwh <= BREAK2)
+//		bill = BASE1 + (RATE2 *(kwh - BREAK1));
+//	else if (kwh <= BREAK3)
+//		bill = BASE2 + (RATE3 *(kwh - BREAK2));
+//	else
+//		bill = BASE3 + (RATE4 * (kwh - BREAK3));
+//	printf("The charge for %.lf kwh is $%1.2f.\n", kwh, bill);
+//
+//	return 0;
+//}
+// divisors.c -- 使用嵌套if语句显示一个数的约数
+#include <stdio.h>
+#include <stdbool.h>
+int main()
