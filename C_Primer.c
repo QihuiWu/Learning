@@ -109,3 +109,41 @@
 //
 //	return 0;
 //}
+// cypher1.c -- 更改输入，空格不变
+//#include <stdio.h>
+//#define SPACE ' '
+//int main(void)
+//{
+//	char ch;
+//
+//	ch = getchar();
+//	while (ch != '\n')
+//	{
+//		if (ch == SPACE)
+//			putchar(ch);
+//		else
+//			putchar(ch + 1);
+//		ch = getchar();
+//	}
+//	putchar(ch);
+//
+//	return 0;
+//}
+// cypher2.c -- 替换输入的字母，非字母字符保持不变
+//#include <stdio.h>
+//#include <ctype.h>
+//int main(void)
+//{
+//	char ch;
+//
+//	while ((ch = getchar()) != '\n')
+//	{
+//		if (isalpha(ch))
+//			putchar(ch + 1);
+//		else
+//			putchar(ch);
+//	}
+//	putchar(ch);
+//
+//	return 0;
+//}
