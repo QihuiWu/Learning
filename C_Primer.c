@@ -404,37 +404,210 @@
 //
 //	return 0;
 //}
+//#include <stdio.h>
+//int main(void)
+//{
+//	char ch;
+//
+//	while ((ch = getchar()) != '#')
+//	{
+//		if (ch != '\n')
+//		{
+//			printf("Step 1\n");
+//			if (ch != 'c')
+//			{
+//				if (ch == 'b')
+//					break;
+//				else if (ch == 'h')
+//				{
+//					printf("Step 3\n");
+//					ch = getchar();
+//				}
+//				else
+//				{
+//					printf("Step 2\n");
+//					printf("Step 3\n");
+//				}
+//				
+//			}
+//			
+//		}
+//		
+//	}
+//	printf("Done\n");
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	char ch;
+//	int space, huanhang, other;
+//	space = huanhang = other = 0;
+//	printf("Please enter text: ");
+//
+//	while ((ch = getchar()) != '#')
+//	{
+//		if (ch == ' ')
+//		{
+//			space++;
+//		}
+//		else if (ch == '\n')
+//		{
+//			huanhang++;
+//		}
+//		else
+//		{
+//			other++;
+//		}
+//	}
+//
+//	printf("space = %d, huanhang = %d, other = %d", space, huanhang, other);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define STOP '#'
+//
+//int main(void)
+//{
+//	char ch;
+//	int count = 0;
+//
+//	printf("Please enter text(# to quit)\n");
+//
+//	while ((ch = getchar()) != STOP)
+//	{
+//		printf("%c%-4d", ch, ch);
+//		count++;
+//		if (count % 8 == 0)
+//			printf("\n");
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define STOP 0
+//
+//int main(void)
+//{
+//	float avg_ou, avg_ji;
+//	int num, num_ou, num_ji, sum_ou, sum_ji;
+//	num_ou = num_ji = sum_ou = sum_ji = 0;
+//
+//	printf("please enter some numbles:");
+//
+//	while ((scanf("%d",&num)) == 1 && num != 0)
+//	{
+//		if (num % 2 == 0)
+//		{
+//			num_ou++;
+//			sum_ou += num;
+//		}
+//		else
+//		{
+//			num_ji++;
+//			sum_ji += num;
+//		}
+//	}
+//
+//	if (num_ou > 0)
+//		avg_ou = (float)sum_ou / num_ou;
+//	if (num_ji > 0)
+//		avg_ji = (float)sum_ji / num_ji;
+//	printf("num_ou = %d avg_ou = %f   num_ji = %d avg_ji = %f\n",
+//		num_ou, avg_ou, num_ji, avg_ji);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define STOP '#'
+//
+//int main(void)
+//{
+//	int count = 0;
+//	char ch;
+//
+//	while ((ch = getchar()) != STOP)
+//	{
+//		if (ch == '.')
+//		{
+//			putchar('!');
+//			count++;
+//		}
+//		else if (ch == '!')
+//		{
+//			printf("!!");
+//			count++;
+//		}
+//		else
+//			putchar(ch);
+//	}
+//	printf("count = %d", count);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define STOP '#'
+//
+//int main(void)
+//{
+//	int count = 0;
+//	char ch;
+//
+//	while ((ch = getchar()) != STOP)
+//	{
+//		switch (ch)
+//		{
+//		case '.':
+//		{
+//					putchar('!');
+//					count++;
+//					break;
+//		}
+//		case '!':
+//		{
+//					printf("!!");
+//					count++;
+//					break;
+//		}
+//		default:
+//			putchar(ch);
+//		}
+//		
+//	}
+//
+//	printf("count = %d\n", count);
+//	return 0;
+//}
 #include <stdio.h>
+#define STOP '#'
+
 int main(void)
 {
+	int count = 0;
+	int flage = 0;
 	char ch;
 
-	while ((ch = getchar()) != '#')
+	while ((ch = getchar()) != STOP)
 	{
-		if (ch != '\n')
+		if (ch == 'i' && flage == 1)
 		{
-			printf("Step 1\n");
-			if (ch != 'c')
-			{
-				if (ch == 'b')
-					break;
-				else if (ch == 'h')
-				{
-					printf("Step 3\n");
-					ch = getchar();
-				}
-				else
-				{
-					printf("Step 2\n");
-					printf("Step 3\n");
-				}
-				
-			}
-			
+			count++;
+			flage = 0;
+			continue;
 		}
-		
+		if (ch != 'e')
+		{
+			flage = 0;
+			continue;
+		}
+		else
+			flage = 1;
 	}
-	printf("Done\n");
+
+	printf("count = %d\n", count);
 
 	return 0;
 }
