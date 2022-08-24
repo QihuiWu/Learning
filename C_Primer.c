@@ -581,33 +581,242 @@
 //	printf("count = %d\n", count);
 //	return 0;
 //}
-#include <stdio.h>
-#define STOP '#'
-
-int main(void)
-{
-	int count = 0;
-	int flage = 0;
-	char ch;
-
-	while ((ch = getchar()) != STOP)
-	{
-		if (ch == 'i' && flage == 1)
-		{
-			count++;
-			flage = 0;
-			continue;
-		}
-		if (ch != 'e')
-		{
-			flage = 0;
-			continue;
-		}
-		else
-			flage = 1;
-	}
-
-	printf("count = %d\n", count);
-
-	return 0;
-}
+//#include <stdio.h>
+//#define STOP '#'
+//
+//int main(void)
+//{
+//	int count = 0;
+//	int flage = 0;
+//	char ch;
+//
+//	while ((ch = getchar()) != STOP)
+//	{
+//		if (ch == 'i' && flage == 1)
+//		{
+//			count++;
+//			flage = 0;
+//			continue;
+//		}
+//		if (ch != 'e')
+//		{
+//			flage = 0;
+//			continue;
+//		}
+//		else
+//			flage = 1;
+//	}
+//
+//	printf("count = %d\n", count);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define JBSJ 40
+//#define JBCF 1.5
+//#define SL300 0.15
+//#define X150 0.2
+//#define YXD 0.25
+//
+//int main(void)
+//{
+//	int hours, xuhao;
+//	double gz, JBGZ;
+//
+//	printf("********************************************************\n");
+//	printf("                                                        \n");
+//	printf("Enter the number corresponding to the desired pay rete or action:\n");
+//	printf("1) $8.75/hr                          2) $9.33/hr\n");
+//	printf("3) $10.00/hr                         4) $11.20/hr\n");
+//	printf("5) quit\n");
+//	printf("********************************************************\n");
+//
+//	printf("please enter 1 to 5: ");
+//	while (scanf("%d", &xuhao) == 1 && xuhao <= 5 && xuhao >= 1)
+//	{
+//		switch (xuhao)
+//		{
+//		case 1:
+//			JBGZ = 8.75;
+//			break;
+//		case 2:
+//			JBGZ = 9.33;
+//			break;
+//		case 3:
+//			JBGZ = 10.00;
+//			break;
+//		case 4:
+//			JBGZ = 11.20;
+//			break;
+//		case 5:
+//			printf("please enter 1 to 5\n");
+//			scanf("%d", &xuhao);
+//		}
+//			
+//	}
+//
+//
+//
+//	printf("Please enter the hours you work(q to quit: ");
+//	while (scanf("%d", &hours) == 1 && hours >= 0)
+//	{
+//		if (hours <= JBSJ)
+//			gz = (1 - YXD) * (JBGZ * hours - 450) - 300 * SL300 - 150 * X150;
+//		else
+//			gz = (1 - YXD) * (JBGZ * 40 + 1.5*1000*(hours - 40) - 450) - 300 * SL300 - 150 * X150;
+//		printf("gz = %f\n", gz);
+//		printf("Enter the hours again(q to quit)\n");
+//	}
+//	
+//
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int num , i, j;
+//
+//	printf("please enter a number bigger than 0:\n");
+//	scanf("%d", &num);
+//	while (num <= 0)
+//	{
+//		printf("please enter a number bigger than 0:\n");
+//		scanf("%d", &num);
+//	}
+//	if (num == 1)
+//		printf("no one\n");
+//	else
+//	{
+//		for (i = 2; i <= num; i++)
+//		{
+//			for (j = 2; j * j <= i; j++)
+//			{
+//				if (i % j == 0)
+//				{
+//					break;
+//				}
+//			}
+//		
+//
+//
+//		}
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#define DS 17850
+//#define HZ 23900
+//#define YHGY 29750
+//#define YHLY 14875
+//
+//void menu();
+//
+//
+//int main(void)
+//{
+//	int class;
+//	double mn, sj;
+//	int dengjie;
+//
+//	menu();
+//
+//	printf("please enter the class of people and the money(q to quit):\n");
+//	while (scanf("%d %lf", &class, &mn) == 2)
+//	{
+//		switch (class)
+//		{
+//		case 1:
+//		{
+//				  dengjie = DS;
+//				  break;
+//		}
+//		case 2:
+//		{
+//				  dengjie = HZ;
+//				  break;
+//		}
+//		case 3:
+//		{
+//				  dengjie = YHGY;
+//				  break;
+//		}
+//		case 4:
+//		{
+//				  dengjie = YHLY;
+//				  break;
+//		}
+//		default:
+//		{
+//				   break;
+//		}
+//		}
+//		if (mn > dengjie)
+//		{
+//			sj = dengjie * 0.15 +(mn - dengjie) * 0.28 ;
+//		}
+//		else
+//		{
+//			sj = mn * 0.15;
+//		}
+//
+//		printf("sj = %f\n", sj);
+//	}
+//	return 0;
+//}
+//
+//void menu()
+//{
+//	printf("***************************************\n");
+//	printf("1,单身                     2,户主\n");
+//	printf("3,已婚，共有               4,已婚，离异\n");
+//	printf("***************************************\n");
+//}
+///* echo.c -- 重复输入 */
+//#include <stdio.h>
+//int main(void)
+//{
+//	char ch;
+//
+//	while ((ch = getchar()) != '#')
+//		putchar(ch);
+//
+//	return 0;
+//}
+///* echo_eof.c -- 重复输入，直到文件结尾 */
+//#include <stdio.h>
+//int main(void)
+//{
+//	int ch;
+//
+//	while ((ch = getchar()) != EOF)
+//		putchar(ch);
+//
+//	return 0;
+//}
+//// file_eof.c --打开一个文件并显示该文件
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main(void)
+//{
+//	int ch;
+//	FILE * fp;
+//	char fname[50];
+//
+//	printf("Enter the name of the file: ");
+//	scanf("%s", fname);
+//	fp = fopen(fname, "r");
+//	if (fp == NULL)
+//	{
+//		printf("Failed to open file. Bye\n");
+//		exit(1);
+//	}
+//	// getc(fp)从打开的文件中获取一个字符
+//	while ((ch = getc(fp)) != EOF)
+//		putchar(ch);
+//	fclose(fp);
+//
+//	return 0;
+//}
