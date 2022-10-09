@@ -1418,7 +1418,469 @@
 //
 //	return 0;
 //}
-// divisors.c -- 使用嵌套if语句显示一个数的约数
-#include <stdio.h>
-#include <stdbool.h>
-int main()
+//// divisors.c -- 使用嵌套if语句显示一个数的约数
+//#include <stdio.h>
+//#include <stdbool.h>
+//int main()
+///* menuette.c -- 菜单程序 */
+//#include <stdio.h>
+//char get_choice(void);
+//char get_first(void);
+//int get_int(void);
+//void count(void);
+//int main(void)
+//{
+//	int choice;
+//	void count(void);
+//
+//	while ((choice = get_choice()) != 'q')
+//	{
+//		switch (choice)
+//		{
+//		case 'a': printf("Buy low, sell high.\n");
+//			break;
+//		case 'b': putchar('\a');
+//			break;
+//		case 'c': count();
+//			break;
+//		default: printf("Program error!\n");
+//			break;
+//		}
+//	}
+//	printf("Bye.\n");
+//
+//	return 0;
+//}
+//
+//void count(void)
+//{
+//	int n, i;
+//
+//	printf("Count how far? Enter an integer:\n");
+//	n = get_int();
+//	for (i = 1; i <= n; i++)
+//		printf("%d\n", i);
+//	while (getchar() != '\n')
+//		continue;
+//}
+//
+//char get_choice(void)
+//{
+//	int ch;
+//
+//	printf("Enter the letter of your choice:\n");
+//	printf("a. advice           b. bell\n");
+//	printf("c. count            q. quit\n");
+//	ch = get_first();
+//	while ((ch < 'a' || ch > 'c') && ch != 'q')
+//	{
+//		printf("Please respond with a, b, c, or q.\n");
+//		ch = get_first();
+//	}
+//
+//	return ch;
+//}
+//
+//char get_first(void)
+//{
+//	int ch;
+//
+//	ch = getchar();
+//	while (getchar() != '\n')
+//		continue;
+//
+//	return ch;
+//}
+//
+//int get_int(void)
+//{
+//	int input;
+//	char ch;
+//
+//	while (scanf("%d", &input) != 1)
+//	{
+//		while ((ch = getchar()) != '\n')
+//			putchar(ch);
+//		printf(" is not an integer.\nPlease enter an ");
+//		printf("integer value, such as 25, -178, or 3: ");
+//	}
+//
+//	return input;
+////}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int ch;
+//	int count = 0;
+//
+//	while ((ch = getchar()) != EOF)
+//	{
+//		count++;
+//	}
+//
+//	printf("count = %d\n", count);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#include <ctype.h>
+//
+//int main(void)
+//{
+//	int ch, up, low, other;
+//	up = low = other = 0;
+//
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (isupper(ch))
+//		{
+//			up++;
+//		}
+//		else if (islower(ch))
+//		{
+//			low++;
+//		}
+//		else
+//			other++;
+//	}
+//
+//	printf("up = %d   low = %d   other = %d\n", up, low, other);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//#include <ctype.h>
+//
+//int main(void)
+//{
+//	int ch, c_w, sum_l;
+//	c_w = sum_l = 0;
+//
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ispunct(ch))
+//			continue;
+//		else if (isupper(ch) || islower(ch))
+//			sum_l++;
+//		else if (isspace(ch))
+//			c_w++;
+//	}
+//
+//	printf("sum_l = %d\n", sum_l);
+//	printf("c_w = %d\n", c_w);
+//	printf("pj = %f\n", (double)sum_l / c_w);
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	char ch;
+//	int bg, end;
+//	bg = 1;
+//	end = 100;
+//
+//	printf("We guass the numble,小了回答l,大了回答u,对了回答y\n");
+//	printf("1-100,is it %d\n", (bg + end) / 2);
+//	while ((ch = getchar()) != 'y')
+//	{
+//		if (ch == 'l')
+//		{
+//			printf("小了\n");
+//			bg = (bg + end) / 2;
+//			printf("is it %d\n", (bg + end) / 2);
+//			while (getchar() != '\n')
+//				continue;
+//		}
+//		else if (ch == 'u')
+//		{
+//			printf("大了\n");
+//			end = (bg + end) / 2;
+//			printf("is it %d\n", (bg + end) / 2);
+//			while (getchar() != '\n')
+//				continue;
+//		}
+//			
+//		else
+//		{
+//			printf("please enter l or u\n");
+//			while (getchar() != '\n')
+//				continue;
+//		}
+//			
+//	}
+//
+//	return 0;
+//}
+///* loccheck.c -- 查看变量被储存在何处 */
+//#include <stdio.h>
+//void mikado(int);
+//int main(void)
+//{
+//	int pooh = 2, bah = 5;
+//
+//	printf("In main(), pooh = %d and &pooh = %p\n", pooh, &pooh);
+//	printf("In main(), bah = %d and &bah = %p\n", bah, &bah);
+//	mikado(pooh);
+//
+//	return 0;
+//}
+//
+//void mikado(int bah)
+//{
+//	int pooh = 10;
+//
+//	printf("In mikado(), pooh = %d and &pooh = %p\n", pooh, &pooh);
+//	printf("In mikado(), bah = %d and &bah = %p\n", bah, &bah);
+//}
+///* swap1.c -- 第1个版本的交换函数 */
+//#include <stdio.h>
+//void interchange(int u, int v);
+//
+//int main(void)
+//{
+//	int x = 5, y = 10;
+//
+//	printf("Originally x = %d and y = %d.\n", x, y);
+//	interchange(x, y);
+//	printf("Now x = %d and y = %d.\n", x, y);
+//
+//	return 0;
+//}
+//
+//void interchange(int u, int v)
+//{
+//	int temp;
+//
+//	temp = u;
+//	u = v;
+//	v = temp;
+//}
+///* swap2.c -- 查找swap1.c的问题 */
+//#include <stdio.h>
+//void interchange(int u, int v);
+//
+//int main(void)
+//{
+//	int x = 5, y = 10;
+//
+//	printf("Originally x = %d and y = %d.\n", x, y);
+//	interchange(x, y);
+//	printf("Now x = %d and y = %d.\n", x, y);
+//
+//	return 0;
+//}
+//
+//void interchange(int u, int v)
+//{
+//	int temp;
+//
+//	printf("Originally u = %d and v = %d.\n", u, v);
+//	temp = u;
+//	u = v;
+//	v = temp;
+//	printf("Now u = %d and v = %d.\n", u, v);
+//}
+///* swap3.c -- 使用指针解决交换函数的问题 */
+//#include <stdio.h>
+//void interchange(int * u, int * v);
+//
+//int main(void)
+//{
+//	int x = 5, y = 10;
+//	printf("Originally x = %d and y = %d.\n", x, y);
+//	interchange(&x, &y);
+//	printf("Now x = %d and y = %d.\n", x, y);
+//
+//	return 0;
+//}
+//
+//void interchange(int * u, int * v)
+//{
+//	int temp;
+//	temp = *u;
+//	*u = *v;
+//	*v = temp;
+//}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int num;
+//
+//	menu(void);
+//
+//	printf("Please enter 1 to 4 :\n");
+//	while (scanf("%d", &num) == 1)
+//	{
+//		if (num<1 && num>4)
+//		{
+//			menu(void);
+//			continue;
+//		}
+//		else
+//		{
+//			play(num);
+//		}
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//void PX(double *x, double *y, double *z);
+//
+//int main(void)
+//{
+//	double a, b, c;
+//
+//	printf("Please enter three doubles:\n");
+//	while (scanf("%lf %lf %lf", &a, &b, &c) == 3)
+//	{
+//		PX(&a, &b, &c);
+//		printf("a = %f, b = %f, c = %f\n", a, b, c);
+//		printf("you can do it again(q to quit)\n");
+//	}
+//
+//	return 0;
+//}
+//
+//void PX(double *x, double *y, double *z)
+//{
+//	double temp;
+//	if (*x > *y)
+//	{
+//		temp = *x;
+//		*x = *y;
+//		*y = temp;
+//	}
+//	if (*y > *z)
+//	{
+//		temp = *y;
+//		*y = *z;
+//		*z = temp;
+//	}
+//	if (*x > *y)
+//	{
+//		temp = *x;
+//		*x = *y;
+//		*y = temp;
+//	}
+//}
+//#include <stdio.h>
+//#include <ctype.h>
+//
+//int main(void)
+//{
+//	char ch;
+//	printf("Please enter some char:\n");
+//	while (ch = getchar() != EOF)
+//	{
+//		if (isupper(ch))
+//		{
+//			printf("ch = %c, xh = %d - 64\n", ch, ch);
+//		}
+//		else if (islower(ch))
+//		{
+//			printf("ch = %c, xh = %d - 96\n", ch, ch);
+//		}
+//		else
+//		{
+//			printf("-1\n");
+//		}
+//	}
+//
+//	return 0;
+//}
+//  第6章的程序清单6.20中，power()函数返回一个double类型
+//  数的正整数次幂。改进该函数，使其能正确计算负幂。
+//  另外，函数要处理0的任何次幂都为0，任何数的0次幂都是
+//  1（函数应报告0的0次幂未定义，因此把该值处理为1）。要使用一个循环，并在程序中测试该函数。
+
+//#include <stdio.h>
+//
+//double power(int x, int y);
+//
+//
+//int main(void)
+//{
+//	double a, b;
+//	printf("Please enter two numbers, then power(x,y) will be print\n");
+//	while (scanf("%lf %lf", &a, &b) == 2)
+//	{
+//		printf("%f\n", power(a, b));
+//		printf("you can do it again(q to quit)\n");
+//	}
+//
+//	return 0;
+//}
+//
+//double power(int x, int y)
+//{
+//	int i;
+//	double ret = 1;
+//	if (y == 0)
+//	{
+//		if (x == 0)
+//		{
+//			printf("No power(0,0), so, return 1\n");
+//		}
+//		return 1;
+//	}
+//	else if (x == 0)
+//	{
+//		return 0;
+//	}
+//	else if (y < 0)
+//	{
+//		return power(x, y+1)/x;
+//	}
+//	else
+//	{
+//		return power(x, y-1)*x;
+//
+//	}
+//}
+//#include <stdio.h>
+//
+//void Fibonacci(int x);
+//
+//int main(void)
+//{
+//	int a;
+//
+//	printf("Please enter a int number(q to quit)\n");
+//	while (scanf("%d", &a) == 1)
+//	{
+//		Fibonacci(a);
+//		printf("you can do it again\n");
+//	}
+//
+//	return 0;
+//}
+//
+//void Fibonacci(int x)
+//{
+//	int i;
+//	long f = 1;
+//	long s = 1;
+//	long add;
+//
+//	if (x <= 0)
+//	{
+//		printf("Please enter a number bigger than 0\n");
+//	}
+//	else
+//	{
+//		for (i = 0; i < x; i++)
+//		{
+//			printf("%ld\n", f);
+//			add = f + s;
+//			f = s;
+//			s = add;
+//		}
+//		
+//	}
+//}
